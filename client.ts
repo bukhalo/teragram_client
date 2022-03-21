@@ -1,5 +1,13 @@
 import { Update } from "./types/updates.ts";
-import { GetMe, GetUpdatesParams, SendMessage, SendMessageParams } from "./types/params.ts";
+import {
+  GetMe,
+  GetUpdatesParams,
+  SendChatActionParams,
+  SendMessage,
+  SendMessageParams,
+  SendPhoto,
+  SendPhotoParams,
+} from "./types/params.ts";
 
 export class Client {
   constructor(private readonly token: string) {}
@@ -19,7 +27,7 @@ export class Client {
     }
     const req = await fetch(
       `https://api.telegram.org/bot${this.token}/${method}`,
-      requestOptions
+      requestOptions,
     );
     const data = await req.json();
     return data.result;
@@ -32,11 +40,28 @@ export class Client {
   public getUpdates(params: GetUpdatesParams): Promise<Update[]> {
     return this.apiCall<Update[], GetUpdatesParams>(
       this.getUpdates.name,
-      params
+      params,
     );
   }
 
   public sendMessage(params: SendMessageParams): Promise<SendMessage> {
-    return this.apiCall<SendMessage, SendMessageParams>(this.sendMessage.name, params);
+    return this.apiCall<SendMessage, SendMessageParams>(
+      this.sendMessage.name,
+      params,
+    );
+  }
+
+  public sendPhoto(params: SendPhotoParams): Promise<SendPhoto> {
+    return this.apiCall<SendPhoto, SendPhotoParams>(
+      this.sendPhoto.name,
+      params,
+    );
+  }
+
+  public sendChatAction(params: SendChatActionParams): Promise<boolean> {
+    return this.apiCall<boolean, SendChatActionParams>(
+      this.sendChatAction.name,
+      params,
+    );
   }
 }

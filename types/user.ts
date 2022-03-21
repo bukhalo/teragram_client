@@ -1,5 +1,5 @@
 export class User {
-  readonly id!: bigint;
+  readonly id!: number;
   readonly is_bot!: boolean;
   readonly first_name!: string;
   readonly last_name?: string;

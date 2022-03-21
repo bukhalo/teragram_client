@@ -6,6 +6,6 @@ export enum ChatType {
 }
 
 export class Chat {
-  readonly id!: bigint;
+  readonly id!: number;
   readonly type!: ChatType;
 }
