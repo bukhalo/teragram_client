@@ -2,11 +2,21 @@ import { Update } from "./types/updates.ts";
 import {
   GetMe,
   GetUpdatesParams,
+  SendAnimation,
+  SendAnimationParams,
+  SendAudio,
+  SendAudioParams,
   SendChatActionParams,
   SendMessage,
   SendMessageParams,
   SendPhoto,
   SendPhotoParams,
+  SendPoll,
+  SendPollParams,
+  SendSticker,
+  SendStickerParams,
+  SendVoice,
+  SendVoiceParams,
 } from "./types/params.ts";
 
 export class Client {
@@ -58,9 +68,41 @@ export class Client {
     );
   }
 
+  public sendAudio(params: SendAudioParams): Promise<SendAudio> {
+    return this.apiCall<SendAudio, SendAudioParams>(
+      this.sendAudio.name,
+      params,
+    );
+  }
+
+  public sendAnimation(params: SendAnimationParams): Promise<SendAnimation> {
+    return this.apiCall<SendAnimation, SendAnimationParams>(
+      this.sendAnimation.name,
+      params,
+    );
+  }
+
+  public sendVoice(params: SendVoiceParams): Promise<SendVoice> {
+    return this.apiCall<SendVoice, SendVoiceParams>(
+      this.sendVoice.name,
+      params,
+    );
+  }
+
+  public sendPoll(params: SendPollParams): Promise<SendPoll> {
+    return this.apiCall<SendPoll, SendPollParams>(this.sendPoll.name, params);
+  }
+
   public sendChatAction(params: SendChatActionParams): Promise<boolean> {
     return this.apiCall<boolean, SendChatActionParams>(
       this.sendChatAction.name,
+      params,
+    );
+  }
+
+  public sendSticker(params: SendStickerParams): Promise<SendSticker> {
+    return this.apiCall<SendSticker, SendStickerParams>(
+      this.sendSticker.name,
       params,
     );
   }
