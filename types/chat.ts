@@ -1,4 +1,5 @@
 export enum ChatType {
+  SENDER = "sender",
   PRIVATE = "private",
   GROUP = "group",
   SUPERGROUP = "supergroup",
