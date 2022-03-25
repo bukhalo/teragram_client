@@ -6,7 +6,7 @@ import { Audio } from "./audio.ts";
 import { Sticker } from "./sticker.ts";
 import { Voice } from "./voice.ts";
 import { Poll } from "./poll.ts";
-import {PhotoSize} from "./photo_size.ts";
+import { PhotoSize } from "./photo_size.ts";
 
 export class Message {
   readonly message_id!: number;
