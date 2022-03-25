@@ -36,3 +36,5 @@ jobs:
 
       - name: Run tests
         run: deno test -A --unstable
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
