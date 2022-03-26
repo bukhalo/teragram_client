@@ -1,11 +1,11 @@
+/**
+ * This object represents a video file.
+ *
+ * @see https://core.telegram.org/bots/api#video
+ */
 import { PhotoSize } from "./photo_size.ts";
 
-/**
- * This object represents an animation file (GIF or H.264/MPEG-4 AVC video without sound).
- *
- * @see https://core.telegram.org/bots/api#animation
- */
-export interface Animation {
+export interface Video {
   /**
    * Identifier for this file, which can be used to download or reuse the file
    */
@@ -33,17 +33,17 @@ export interface Animation {
   readonly duration: number;
 
   /**
-   * Animation thumbnail as defined by sender
+   * Video thumbnail
    */
   readonly thumb?: PhotoSize;
 
   /**
-   * Original animation filename as defined by sender
+   * Original filename as defined by sender
    */
   readonly file_name?: string;
 
   /**
-   * MIME type of the file as defined by sender
+   * Mime type of a file as defined by sender
    */
   readonly mime_type?: string;
 

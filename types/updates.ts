@@ -9,10 +9,6 @@ import { PollAnswer } from "./poll_answer.ts";
 import { ChatMemberUpdated } from "./chat_member_updated.ts";
 import { ChatJoinRequest } from "./chat_join_request.ts";
 
-export enum UpdateType {
-  MESSAGE_UPDATE = "MESSAGE_UPDATE",
-}
-
 /**
  * This object represents an incoming update.
  *
