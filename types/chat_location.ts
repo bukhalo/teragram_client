@@ -5,7 +5,7 @@ import { Location } from "./location.ts";
  *
  * @see https://core.telegram.org/bots/api#chatlocation
  */
-export interface Chat_location {
+export interface ChatLocation {
   /**
    * The location to which the supergroup is connected. Can't be a live location.
    */
